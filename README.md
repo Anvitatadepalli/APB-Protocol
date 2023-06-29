@@ -1,6 +1,6 @@
 # AMBA APB Protocol
 
-# Introduction
+## Introduction
 ### •	AMBA
 
 The AMBA (Advanced Microcontroller Bus Architecture) is an open standard bus protocol developed by ARM for designing complex System-on-Chip (SoC) architectures. It provides a framework and specifications for efficient communication and integration of IP components within a SoC. The architecture includes buses like AHB, ASB, APB, and AXI, each catering to specific requirements in terms of performance and complexity. AMBA promotes modularity and reusability, simplifying the development of embedded systems in various domains.
@@ -14,7 +14,7 @@ Developed by ARM, the APB protocol provides a low-power, low-complexity interfac
 The AMBA APB protocol is designed to address the specific requirements of peripheral devices that operate at slower speeds and do not require high bandwidth. It is commonly used to connect peripheral devices such as timers, interrupt controllers, UARTs (Universal Asynchronous Receiver-Transmitters), and other low-speed peripherals to the system bus.
 The AMBA APB protocol serves as a crucial interface protocol for connecting peripheral devices in SoC designs. Its simplicity, low power consumption, and widespread adoption have made it a popular choice in the industry.
 
-# Characteristics of APB
+## Characteristics of APB
 1.	Simplicity: APB is designed to be simple, making it easier to implement and integrate into SoC designs. Its simplicity is especially suitable for low-power and low-complexity peripheral devices.
 2.	Low Power Consumption: APB is optimized for low-power operation, making it ideal for connecting low-speed peripheral devices that don't require high bandwidth.
 3.	Single Clock: APB operates using a single clock, which simplifies the timing requirements and reduces complexity in the design.
@@ -22,10 +22,10 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 5.	Control and Data Transfers: The protocol defines rules and guidelines for address and data transfers, read and write operations, arbitration, error handling, and clock synchronization. This ensures efficient and reliable communication between the master and slave devices.
 6.	Suitable for Low-Speed Peripherals: APB is commonly used for connecting low-speed peripheral devices such as timers, interrupt controllers, UARTs, and other similar peripherals to the SoC. It provides a cost-effective and efficient solution for these types of devices.
 
-# Block Diagram
+## Block Diagram
  <img src="https://github.com/Anvitatadepalli/APB-Protocol/assets/98482161/5a9598aa-0cd6-4fb8-9505-ad499b951064" width="700">
 
-# Signal Description
+## Signal Description
 •	PCLK Clock: The rising edge of PCLK times all transfers on the APB.
 
 •	PRESET: System bus equivalent Reset. The APB reset signal is active LOW.
@@ -46,9 +46,10 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 
 •	PSLAVERR: Slave error, this signal indicates a transfer failure.
 
-# Operating States
+## Operating States
 
  <img src="https://github.com/Anvitatadepalli/APB-Protocol/assets/98482161/2ef54dff-173c-408b-8cf7-8a0b1ed8e847" width="500" height="500">
+ 
 
 •	**IDLE**: This is the default state of the APB. 
 
@@ -58,7 +59,7 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 
 •	In summary, the APB protocol involves transitioning from the idle state to the setup phase, where the master device prepares for a transaction. The access phase follows, where the master initiates the transaction by asserting control signals and providing the address.
 
-# Expected Waveforms
+## Expected Waveforms
 ### Write Operation
 
 <img src="https://github.com/Anvitatadepalli/APB-Protocol/assets/98482161/29ddfd93-b6f8-4e78-8f57-9ddf77108058" width="500">
@@ -91,7 +92,7 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 
 •	When a write transaction receives an error this does not mean that the register within the peripheral has not been updated. Read transactions that receive an error can return invalid data. There is no requirement for the peripheral to drive the data bus to all 0s for a read error.
 
-# Simulation Results
+## Simulation Results
 The following results are implementation of Verilog code in Questa-sim.
 
 ### Read and Write Operation
@@ -120,11 +121,11 @@ The following results are implementation of Verilog code in Questa-sim.
 
 
 
-# Conclusion
+## Conclusion
 We have explored the key characteristics and operating states of the APB protocol. We have seen how its single-clock architecture, master-slave configuration, and well-defined phases enable efficient and controlled communication between the master and slave devices.
 The APB protocol's straightforward two-phase protocol simplifies implementation and reduces complexity, making it particularly suitable for low-power and low-complexity peripheral devices. Its modularity and compatibility within the AMBA architecture also facilitate the reuse of intellectual property components, promoting efficiency and time-saving in SoC designs.
 
-# References
+## References
 
 [1] ARM, “AMBA Specification Overview”: AMBA APB Protocol Specification (umich.edu)
 
