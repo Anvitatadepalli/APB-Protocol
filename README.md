@@ -22,8 +22,10 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 5.	Control and Data Transfers: The protocol defines rules and guidelines for address and data transfers, read and write operations, arbitration, error handling, and clock synchronization. This ensures efficient and reliable communication between the master and slave devices.
 6.	Suitable for Low-Speed Peripherals: APB is commonly used for connecting low-speed peripheral devices such as timers, interrupt controllers, UARTs, and other similar peripherals to the SoC. It provides a cost-effective and efficient solution for these types of devices.
 
+
 ## Block Diagram
  <img src="https://github.com/Anvitatadepalli/APB-Protocol/assets/98482161/5a9598aa-0cd6-4fb8-9505-ad499b951064" width="700">
+
 
 ## Signal Description
 •	PCLK Clock: The rising edge of PCLK times all transfers on the APB.
@@ -44,7 +46,7 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 
 •	PRDATA: 32 bits Read data if PWRITE is LOW.
 
-•	PSLAVERR: Slave error, this signal indicates a transfer failure.
+•	PSLAVERR: Slave error, this signal indicates a transfer failure.  
 
 ## Operating States
 
@@ -58,6 +60,7 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 •	**ACCESS**: The enable signal, PENABLE, is asserted in the ACCESS state. The address, write, select, and write data signals must remain stable during the transition from the SETUP to ACCESS state. Exit from the ACCESS state is controlled by the PREADY signal from the slave
 
 •	In summary, the APB protocol involves transitioning from the idle state to the setup phase, where the master device prepares for a transaction. The access phase follows, where the master initiates the transaction by asserting control signals and providing the address.
+
 
 ## Expected Waveforms
 ### Write Operation
@@ -91,6 +94,7 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 •	There is no requirement for the peripheral to drive the data bus to all 0s for a read error.
 
 •	When a write transaction receives an error this does not mean that the register within the peripheral has not been updated. Read transactions that receive an error can return invalid data. There is no requirement for the peripheral to drive the data bus to all 0s for a read error.
+
 
 ## Simulation Results
 The following results are implementation of Verilog code in Questa-sim.
