@@ -50,11 +50,11 @@ The AMBA APB protocol serves as a crucial interface protocol for connecting peri
 
  <img src="https://github.com/Anvitatadepalli/APB-Protocol/assets/98482161/2ef54dff-173c-408b-8cf7-8a0b1ed8e847" width="500" height="500">
 
-•	IDLE: This is the default state of the APB. 
+•	**IDLE**: This is the default state of the APB. 
 
-•	SETUP: When a transfer is required the bus moves into the SETUP state, where the appropriate select signal, PSELx, is asserted. The bus only remains in the SETUP state for one clock cycle and always moves to the ACCESS state on the next rising edge of the clock. 
+•	**SETUP**: When a transfer is required the bus moves into the SETUP state, where the appropriate select signal, PSELx, is asserted. The bus only remains in the SETUP state for one clock cycle and always moves to the ACCESS state on the next rising edge of the clock. 
 
-•	ACCESS: The enable signal, PENABLE, is asserted in the ACCESS state. The address, write, select, and write data signals must remain stable during the transition from the SETUP to ACCESS state. Exit from the ACCESS state is controlled by the PREADY signal from the slave
+•	**ACCESS**: The enable signal, PENABLE, is asserted in the ACCESS state. The address, write, select, and write data signals must remain stable during the transition from the SETUP to ACCESS state. Exit from the ACCESS state is controlled by the PREADY signal from the slave
 
 •	In summary, the APB protocol involves transitioning from the idle state to the setup phase, where the master device prepares for a transaction. The access phase follows, where the master initiates the transaction by asserting control signals and providing the address.
 
